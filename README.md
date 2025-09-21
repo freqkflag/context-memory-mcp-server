@@ -29,6 +29,13 @@ The build step creates `dist/index.js`. You can launch the server with:
 node dist/index.js
 ```
 
+### Smithery
+
+If you prefer to orchestrate MCP servers with [Smithery](https://smithery.ai/), this package now exposes both a CLI and programmatic entry points that Smithery understands:
+
+- **CLI**: the npm bin `context-memory-mcp-server` starts the stdio transport, so Smithery can invoke it directly.
+- **Module export**: importing `startContextMemoryServer` (or `createContextMemoryServer`) from `context-memory-mcp-server` returns the configured `McpServer`, which Smithery can wire up to any transport it launches.
+
 Environment variables:
 
 | Variable | Description | Default |
